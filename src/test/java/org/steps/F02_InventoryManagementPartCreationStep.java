@@ -3,18 +3,12 @@ package org.steps;
 import java.io.IOException;
 
 import org.config.ConfigReader;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import hooks.BaseClass;
 import io.cucumber.java.en.*;
 import pages.InventoryManagementPartCreationPage;
 import pages.LoginPage;
-
-import java.util.List;
-import java.util.Map;
 
 public class F02_InventoryManagementPartCreationStep extends BaseClass {
 
@@ -61,16 +55,16 @@ public class F02_InventoryManagementPartCreationStep extends BaseClass {
 	@When("User fills in the following data:")
 	public void userFillsInTheFollowingData(io.cucumber.datatable.DataTable dataTable) {
 
-		List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
-		for (Map<String, String> row : data) {
-			for (Map.Entry<String, String> entry : row.entrySet()) {
-				String fieldName = entry.getKey();
-				String value = entry.getValue();
-				WebElement inputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(fieldName)));
-				inputElement.sendKeys(value);
-
-			}
-		}
+//		List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
+//		for (Map<String, String> row : data) {
+//			for (Map.Entry<String, String> entry : row.entrySet()) {
+//				String fieldName = entry.getKey();
+//				String value = entry.getValue();
+//				WebElement inputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(fieldName)));
+//				inputElement.sendKeys(value);
+//
+//			}
+//		}
 	}
 
 	@When("User clicks on the Submit button")

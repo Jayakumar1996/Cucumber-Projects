@@ -14,13 +14,12 @@ public class LoginPage {
 	WebDriverWait wait;
 
 	// Locators
-	By loginForm = By.xpath("//p[text()='Log in to your account']/following-sibling::form");
+	By loginForm = By.tagName("form");
 	By userName = By.name("email");
 	By pass = By.name("password");
 	By login = By.xpath("//button[text()='Sign In']");
 	By successMessage = By.xpath("//div[text()='Login successful']");
 	
-
 	// Constructor
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;

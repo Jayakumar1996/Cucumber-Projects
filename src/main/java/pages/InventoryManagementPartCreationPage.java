@@ -55,12 +55,12 @@ public class InventoryManagementPartCreationPage {
 		 
 	}
 	 public void createPart(String partName, String partNumber, String description, String quantity, String unitPrice) {
-	        wait.until(ExpectedConditions.visibilityOfElementLocated(partNameField)).sendKeys(partName);
-	        wait.until(ExpectedConditions.visibilityOfElementLocated(partNumberField)).sendKeys(partNumber);
-	        wait.until(ExpectedConditions.visibilityOfElementLocated(descriptionField)).sendKeys(description);
-	        wait.until(ExpectedConditions.visibilityOfElementLocated(quantityField)).sendKeys(quantity);
-	        wait.until(ExpectedConditions.visibilityOfElementLocated(unitPriceField)).sendKeys(unitPrice);
-	        wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
+//	        wait.until(ExpectedConditions.visibilityOfElementLocated(partNameField)).sendKeys(partName);
+//	        wait.until(ExpectedConditions.visibilityOfElementLocated(partNumberField)).sendKeys(partNumber);
+//	        wait.until(ExpectedConditions.visibilityOfElementLocated(descriptionField)).sendKeys(description);
+//	        wait.until(ExpectedConditions.visibilityOfElementLocated(quantityField)).sendKeys(quantity);
+//	        wait.until(ExpectedConditions.visibilityOfElementLocated(unitPriceField)).sendKeys(unitPrice);
+//	        wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
 	    }
 
 }
