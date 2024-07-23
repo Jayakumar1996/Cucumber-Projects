@@ -27,7 +27,7 @@ public class F02_InventoryManagementPartCreationStep extends BaseClass {
 		loginPage.enterUsername(username);
 		loginPage.enterPassword(password);
 		loginPage.clickLogin();
-		screenCapture("SignIn for Inventory");
+		screenCapture("SignIn for Inventory Management");
 
 		storeParentWindowHandle();
 	}

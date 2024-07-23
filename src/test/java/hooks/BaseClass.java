@@ -23,6 +23,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class BaseClass {
 	public static WebDriver driver;
@@ -132,6 +134,18 @@ public class BaseClass {
 		FileUtils.copyFile(source, target);
 	}
 
+	public void saveScreenshot(String sourcePath, String destinationPath) {
+		try {
+			// Ensure the destination directory exists
+			Files.createDirectories(Paths.get(destinationPath).getParent());
+
+			// Move the screenshot file
+			Files.move(Paths.get(sourcePath), Paths.get(destinationPath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	// change to by
 	public void selectByValue(By elementLocator, String value) {
 		WebElement element = driver.findElement(elementLocator);
@@ -166,49 +180,50 @@ public class BaseClass {
 //		return childWindowsID;
 //	}
 	// Method to store the parent window handle
-    public void storeParentWindowHandle() {
-        parentWindowHandle = driver.getWindowHandle();
-    }
+	public void storeParentWindowHandle() {
+		parentWindowHandle = driver.getWindowHandle();
+	}
 
-    // Method to switch to the child window
-    public void switchToChildWindow() {
-        Set<String> allWindowHandles = driver.getWindowHandles();
-        for (String windowHandle : allWindowHandles) {
-            if (!windowHandle.equals(parentWindowHandle)) {
-                driver.switchTo().window(windowHandle);
-                break;
-            }
-        }
-    }
-	// Explicit Waits    
-    public WebElement waitForElementToBeVisible(By locator, int timeoutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
+	// Method to switch to the child window
+	public void switchToChildWindow() {
+		Set<String> allWindowHandles = driver.getWindowHandles();
+		for (String windowHandle : allWindowHandles) {
+			if (!windowHandle.equals(parentWindowHandle)) {
+				driver.switchTo().window(windowHandle);
+				break;
+			}
+		}
+	}
 
-    public WebElement waitForElementToBeClickable(By locator, int timeoutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
-    }
+	// Explicit Waits
+	public WebElement waitForElementToBeVisible(By locator, int timeoutInSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
 
-    public boolean waitForElementToBeInvisible(By locator, int timeoutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-        return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-    }
+	public WebElement waitForElementToBeClickable(By locator, int timeoutInSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+		return wait.until(ExpectedConditions.elementToBeClickable(locator));
+	}
 
-    public WebElement waitForElementToBePresent(By locator, int timeoutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-    }
+	public boolean waitForElementToBeInvisible(By locator, int timeoutInSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+		return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+	}
 
-    public Boolean waitForTitleToBe(String title, int timeoutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-        return wait.until(ExpectedConditions.titleIs(title));
-    }
+	public WebElement waitForElementToBePresent(By locator, int timeoutInSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+	}
 
-    public Boolean waitForUrlToContain(String fraction, int timeoutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-        return wait.until(ExpectedConditions.urlContains(fraction));
-    }
+	public Boolean waitForTitleToBe(String title, int timeoutInSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+		return wait.until(ExpectedConditions.titleIs(title));
+	}
+
+	public Boolean waitForUrlToContain(String fraction, int timeoutInSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+		return wait.until(ExpectedConditions.urlContains(fraction));
+	}
 
 }
