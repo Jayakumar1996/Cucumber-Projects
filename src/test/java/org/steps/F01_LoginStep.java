@@ -1,8 +1,8 @@
 package org.steps;
 
 
-import static org.testng.Assert.assertTrue;
 
+import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 
 import org.config.ConfigReader;
@@ -21,7 +21,7 @@ public class F01_LoginStep extends BaseClass{
 
 	
 	@Given("User should be in Fleet Management Login Page")
-	public void user_should_be_in_fleet_management_login_page() {
+	public void userShouldBeInFleetManagementLoginPage() {
 
         // Assert that the login form is displayed
         assertTrue(loginPage.isLoginFormDisplayed());

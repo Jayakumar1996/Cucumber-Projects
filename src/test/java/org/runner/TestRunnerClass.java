@@ -7,7 +7,6 @@ import org.report.ReportingClass;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.SnippetType;
-import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources/Features",
@@ -22,7 +21,7 @@ plugin={
 //		"json:target\\jsonReport.json"		
 })
 
-public class TestRunnerClass extends AbstractTestNGCucumberTests {
+public class TestRunnerClass  {
 
 	@AfterClass
 	public static void report() {
