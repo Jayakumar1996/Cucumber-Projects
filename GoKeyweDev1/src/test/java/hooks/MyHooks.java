@@ -9,7 +9,8 @@ public class MyHooks extends BaseClass {
 	public void beforeScenario() {
 //		chromeLaunch();
 		browserLaunch("chrome");
-		urlLaunch("https://dev1.gokeywe.com/");
+//		urlLaunch("https://dev1.gokeywe.com/");
+		handleAuth();
 		deleteAllCookies();
 		maximize();
 		impWait(60);
@@ -22,3 +23,4 @@ public class MyHooks extends BaseClass {
 //		quit();
 	}
 }
+ 

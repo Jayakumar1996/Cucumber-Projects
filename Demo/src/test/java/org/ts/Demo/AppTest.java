@@ -2,6 +2,7 @@ package org.ts.Demo;
 
 import java.util.Random;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,8 @@ import baseclass.BaseClass;
 
 public class AppTest extends BaseClass {
 
-	public static void main(String[] args) throws Exception {
+	@Test
+	public void seleniumPractise() throws InterruptedException {
 
 		browserLaunch("chrome");
 		urlLaunch("https://www.selenium.dev/selenium/web/web-form.html");
@@ -85,7 +87,7 @@ public class AppTest extends BaseClass {
 		searchField.sendKeys("Chicago");
 
 		// File Input
-		String filePath = "C:\\Users\\Jayakumar\\Downloads\\my-document.pdf";
+		String filePath = "C:\\Users\\jayakumart\\Documents\\KeyWe\\Agent images\\Sample.jpg";
 		WebElement uploadButton = driver.findElement(By.xpath("//input[@type='file']"));
 		uploadButton.sendKeys(filePath);
 
@@ -97,11 +99,11 @@ public class AppTest extends BaseClass {
 		Thread.sleep(2000);
 
 		// Date picker
-		WebElement datePickerInput = driver.findElement(By.name("my-date"));
-		datePickerInput.click();
-
-		WebElement desiredDateElement = driver.findElement(By.xpath("//td[@data-date='1700092800000']"));
-		desiredDateElement.click();
+//		WebElement datePickerInput = driver.findElement(By.name("my-date"));
+//		datePickerInput.click();
+//
+//		WebElement desiredDateElement = driver.findElement(By.xpath("//td[@data-date='1700092800000']"));
+//		desiredDateElement.click();
 
 		//Checkbox
 		WebElement defCheckbox = driver.findElement(By.id("my-check-2"));
@@ -126,5 +128,6 @@ public class AppTest extends BaseClass {
 		Thread.sleep(9000);
 
 //		driver.findElement(By.xpath("//button[text()='Submit']")).click();
+		driver.quit();
 	}
 }

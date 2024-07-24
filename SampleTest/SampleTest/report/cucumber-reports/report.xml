@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="28.835" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="To test the functionality of Mandible Reconstruction procedure" name="User is able to check the functionality" time="28.33">
+<system-out><![CDATA[
+Given Launch the MRGP case from CMS emulator................................passed
+When User gets the list of tab names details................................passed
+]]></system-out>
+</testcase>
+</testsuite>

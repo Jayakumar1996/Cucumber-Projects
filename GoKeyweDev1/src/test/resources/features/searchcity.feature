@@ -2,7 +2,7 @@
 Feature: City Seach functionality
 
 Background:
-   Given user enters email "michael.riese@cbnorcal.com" and enters password "Testing123" and clicks on login button
+   Given user enters email "jayakumar086.t@gmail.com" and enters password "Test@123" and clicks on login button
    
    
   Scenario Outline: Properties in the particular city
@@ -12,8 +12,7 @@ Background:
   
     Examples: 
       | city            | 
-      | los gatos, ca   | 
-      | san jose, ca    | 
+      | Los Gatos       | 
+      | San Jose        | 
            
-      
  
