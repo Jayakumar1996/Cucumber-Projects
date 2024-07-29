@@ -27,7 +27,7 @@ public class F02_InventoryManagementPartCreationStep extends BaseClass {
 		loginPage.enterUsername(username);
 		loginPage.enterPassword(password);
 		loginPage.clickLogin();
-		screenCapture("SignIn for Inventory Management");
+//		screenCapture("SignIn for Inventory");
 
 		storeParentWindowHandle();
 	}
@@ -48,7 +48,7 @@ public class F02_InventoryManagementPartCreationStep extends BaseClass {
 	@When("User clicks on the Create Part button")
 	public void userClicksOnTheCreatePartButton() {
 		inventoryManagementPartCreationPage.navigateToPartModule();
-		inventoryManagementPartCreationPage.clickNewPart();
+//		inventoryManagementPartCreationPage.clickNewPart();
 
 	}
 

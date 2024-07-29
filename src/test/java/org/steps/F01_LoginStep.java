@@ -42,7 +42,7 @@ public class F01_LoginStep extends BaseClass{
 	@When("User should Click Login button")
 	public void userShouldClickLoginButton() throws IOException {
 		loginPage.clickLogin();
-        screenCapture("SignIn success");
+//        screenCapture("SignIn success");
 	}
 
 	@Then("User should validate Login success message")
@@ -53,7 +53,7 @@ public class F01_LoginStep extends BaseClass{
 	        System.out.println("Actual message: " + actualMessage);
 	        Assert.assertEquals(expectedMessage.toLowerCase(), actualMessage.toLowerCase());
 	        
-	        screenCapture("Login_Successfully");
+//	        screenCapture("Login_Successfully");
 	  
 	}
 }
